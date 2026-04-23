@@ -1,3 +1,57 @@
 spring:
   application:
     name: assettrack-api
+  profiles:
+    active: dev
+
+  # ─── JPA / Hibernate ────────────────────────────────────────────────────────
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        use_sql_comments: true
+
+  # ─── Jackson (serialização JSON) ────────────────────────────────────────────
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    default-property-inclusion: non_null
+
+# ─── JWT ──────────────────────────────────────────────────────────────────────
+jwt:
+  secret: ${JWT_SECRET:bXlTdXBlclNlY3JldEtleVRoYXRJc0F0TGVhc3QyNTZCaXRzTG9uZw==}
+  access-token-expiration: 900000
+  refresh-token-expiration: 604800000
+
+# ─── Actuator ─────────────────────────────────────────────────
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, metrics, prometheus
+  endpoint:
+    health:
+      show-details: when_authorized
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+# ─── OpenAPI / Swagger ────────────────────────────────────────────────────────
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+  api-docs:
+    path: /v3/api-docs
+
+# ─── Logging ──────────────────────────────────────────────────────────────────
+logging:
+  level:
+    com.assettrack: DEBUG
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN
