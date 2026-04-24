@@ -12,6 +12,6 @@ public interface AssetRepository {
     Optional<Asset> findById(UUID id);
     List<Asset> findAll();
     List<Asset> findAllByStatus(AssetStatus status);
-    boolean existsById(UUID id);
+    boolean existsByName(String name);
     void deleteById(UUID id);
 }
