@@ -3,12 +3,13 @@ package com.assettrack.assettrack_api.infrastructure.persistence.repository;
 import com.assettrack.assettrack_api.infrastructure.persistence.entity.AssetJpaEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import com.assettrack.assettrack_api.domain.valueobject.AssetStatus;
 
 import java.util.List;
 import java.util.UUID;
 
 public interface AssetJpaRepository extends JpaRepository<AssetJpaEntity, UUID> {
-    List<AssetJpaEntity> findByStatus(String name);
+    List<AssetJpaEntity> findByStatus(AssetStatus name);
 
     boolean existsByName(String name);
 
