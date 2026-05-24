@@ -27,6 +27,20 @@ public class Alert {
         this.acknowledged = false;
         this.triggeredAt = LocalDateTime.now();
     }
+    public Alert(UUID id, UUID assetId, String sensorType, Double measuredValue,
+                 Double threshold, AlertSeverity severity, boolean acknowledged,
+                 String acknowledgedBy, LocalDateTime triggeredAt, LocalDateTime acknowledgedAt) {
+        this.id = id;
+        this.assetId = assetId;
+        this.sensorType = sensorType;
+        this.measuredValue = measuredValue;
+        this.threshold = threshold;
+        this.severity = severity;
+        this.acknowledged = acknowledged;
+        this.acknowledgedBy = acknowledgedBy;
+        this.triggeredAt = triggeredAt;
+        this.acknowledgedAt = acknowledgedAt;
+    }
     public void acknowledge(String operatorName){
         if(this.acknowledged){
             throw new com.assettrack.assettrack_api.domain.exception.DomainException("Alert has already been acknowledged");
@@ -35,7 +49,6 @@ public class Alert {
         this.acknowledgedBy = operatorName;
         this.acknowledgedAt = LocalDateTime.now();
     }
-
     public UUID getId() { return id; }
     public UUID getAssetId() { return assetId; }
     public String getSensorType() { return sensorType; }

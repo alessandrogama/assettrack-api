@@ -11,10 +11,10 @@ import java.util.UUID;
 
 public class Asset {
     private final UUID id;
-    private String name;
-    private String model;
-    private String location;
-    private String responsible;
+    private final String name;
+    private final String model;
+    private final String location;
+    private final String responsible;
     private AssetStatus status;
     private final LocalDateTime createdAt;
     private LocalDateTime updatedAt;
