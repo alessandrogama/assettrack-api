@@ -19,7 +19,7 @@
 
 AssetTrack is a backend REST API designed for industrial environments. It allows teams to manage physical equipment (assets), create and track maintenance work orders, receive sensor telemetry, and get notified instantly when a sensor reading exceeds a configured threshold.
 
-Built as a portfolio project targeting industrial clients such as Petrobras, WEG, and Embraer — the same segment served by [EDGE](https://edgetecnologia.com.br), an Alagoan tech company.
+Built as a portfolio project targeting industrial clients such as Petrobras, WEG, and Embraer.
 
 ---
 
