@@ -6,10 +6,11 @@ import com.assettrack.assettrack_api.domain.entity.Asset;
 import com.assettrack.assettrack_api.domain.exception.DomainException;
 import com.assettrack.assettrack_api.domain.repository.AssetRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
-
+@Service
 public class UpdateAssetUseCase {
     private final AssetRepository assetRepository;
 

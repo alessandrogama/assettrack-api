@@ -11,9 +11,8 @@ public record ErrorResponse(
         String path,
         List<String> details
 ) {
-    public static ErrorResponse of(int status, String error, String message,
-                                   String path, String details) {
-        return new ErrorResponse(LocalDateTime.now(), status,error,message,path,List.of(details));
+    public static ErrorResponse of(int status, String error, String message, String path) {
+        return new ErrorResponse(LocalDateTime.now(), status, error, message, path, List.of());
     }
     public static ErrorResponse of(int status, String error, String message,
                                    String path, List<String> details) {

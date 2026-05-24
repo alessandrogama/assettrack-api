@@ -3,7 +3,9 @@ package com.assettrack.assettrack_api.domain.entity;
 import java.time.LocalDateTime;
 import java.util.UUID;
 import com.assettrack.assettrack_api.domain.valueobject.AlertSeverity;
+import lombok.Getter;
 
+@Getter
 public class Alert {
     private final UUID id;
     private final UUID assetId;
@@ -49,15 +51,5 @@ public class Alert {
         this.acknowledgedBy = operatorName;
         this.acknowledgedAt = LocalDateTime.now();
     }
-    public UUID getId() { return id; }
-    public UUID getAssetId() { return assetId; }
-    public String getSensorType() { return sensorType; }
-    public Double getMeasuredValue() { return measuredValue; }
-    public Double getThreshold() { return threshold; }
-    public AlertSeverity getSeverity() { return severity; }
-    public boolean isAcknowledged() { return acknowledged; }
-    public String getAcknowledgedBy() { return acknowledgedBy; }
-    public LocalDateTime getTriggeredAt() { return triggeredAt; }
-    public LocalDateTime getAcknowledgedAt() { return acknowledgedAt; }
 
 }

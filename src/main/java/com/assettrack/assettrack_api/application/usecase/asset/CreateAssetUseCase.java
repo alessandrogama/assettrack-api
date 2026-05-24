@@ -6,7 +6,9 @@ import com.assettrack.assettrack_api.domain.entity.Asset;
 import com.assettrack.assettrack_api.domain.exception.DomainException;
 import com.assettrack.assettrack_api.domain.repository.AssetRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CreateAssetUseCase {
     private final AssetRepository assetRepository;
 

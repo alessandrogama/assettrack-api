@@ -6,10 +6,11 @@ import com.assettrack.assettrack_api.domain.repository.AssetRepository;
 import jakarta.transaction.Transactional;
 import com.assettrack.assettrack_api.domain.entity.Asset;
 import com.assettrack.assettrack_api.domain.exception.DomainException;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
-
+@Service
 public class MaintenanceUseCase {
     private final AssetRepository assetRepository;
 
@@ -30,7 +31,7 @@ public class MaintenanceUseCase {
         return AssetResponse.from(assetRepository.save(asset));
     }
     @Transactional
-    public AssetResponse deactivate(String assetId, MaintenanceRequest request){
+    public AssetResponse deactivate(String assetId){
         Asset asset = findAsset(assetId);
         asset.deactivate();
         return AssetResponse.from(assetRepository.save(asset));

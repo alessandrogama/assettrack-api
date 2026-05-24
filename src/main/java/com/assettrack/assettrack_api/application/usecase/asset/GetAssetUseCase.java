@@ -4,10 +4,11 @@ import com.assettrack.assettrack_api.application.dto.response.AssetResponse;
 import com.assettrack.assettrack_api.domain.entity.Asset;
 import com.assettrack.assettrack_api.domain.exception.DomainException;
 import com.assettrack.assettrack_api.domain.repository.AssetRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
-
+@Service
 public class GetAssetUseCase {
     private final AssetRepository assetRepository;
 

@@ -4,11 +4,12 @@ import com.assettrack.assettrack_api.application.dto.response.AlertResponse;
 import com.assettrack.assettrack_api.domain.entity.Alert;
 import com.assettrack.assettrack_api.domain.exception.DomainException;
 import com.assettrack.assettrack_api.domain.repository.AlertRepository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
-
+@Service
 public class AlertUseCase {
 
     private final AlertRepository alertRepository;
