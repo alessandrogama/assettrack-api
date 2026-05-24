@@ -1,4 +1,4 @@
-package com.assettrack.infrastructure.persistence.impl;
+package com.assettrack.assettrack_api.infrastructure.persistence.impl;
 
 import com.assettrack.assettrack_api.domain.entity.ServiceOrder;
 import com.assettrack.assettrack_api.domain.repository.ServiceOrderRepository;

@@ -1,0 +1,23 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  # ─── PostgreSQL local ──
+  datasource:
+    url: jdbc:postgresql://localhost:5432/assettrack
+    username: postgres
+    password: dev
+    hikari:
+      maximum-pool-size: 5
+      minimum-idle: 2
+      connection-timeout: 30000
+
+  # ─── Redis local  ─────────────────
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  jpa:
+    show-sql: true
